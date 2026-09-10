@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Ready Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Job Ready Tracker</h1>
+    <div class="header-actions">
+      <button id="enable-push" class="ghost" title="Enable browser notifications">Enable browser alerts</button>
+      <button id="bell" class="bell" aria-label="Notifications">
+        &#128276;
+        <span id="badge" class="badge hidden">0</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="add-job">
+    <form id="job-form">
+      <input name="title" placeholder="Job title (e.g. Backend Developer)" required />
+      <input name="company" placeholder="Company" required />
+      <input name="candidate" placeholder="Candidate (optional)" />
+      <button type="submit">Add job</button>
+    </form>
+  </section>
+
+  <main id="board" class="board"></main>
+
+  <aside id="panel" class="panel hidden">
+    <div class="panel-header">
+      <strong>Notifications</strong>
+      <div>
+        <button id="mark-read" class="ghost">Mark all read</button>
+        <button id="close-panel" class="ghost">&times;</button>
+      </div>
+    </div>
+    <ul id="notif-list" class="notif-list"></ul>
+  </aside>
+
+  <div id="toasts" class="toasts"></div>
+
+  <template id="job-card-tpl">
+    <article class="card">
+      <div class="card-title"></div>
+      <div class="card-company"></div>
+      <div class="card-candidate"></div>
+      <div class="progress"><div class="progress-bar"></div></div>
+      <div class="card-actions">
+        <button class="back ghost" title="Move back">&larr;</button>
+        <button class="advance">Advance &rarr;</button>
+        <button class="delete ghost" title="Remove">&#128465;</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
