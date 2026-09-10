@@ -1,0 +1,15 @@
+{
+  "name": "job-ready-tracker",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Multi-level job readiness tracker with real-time notifications",
+  "dependencies": {
+    "express": "^4.22.2"
+  }
+}
